@@ -1,0 +1,14 @@
+GUILLERMO ARRIAGA GARCÍA		NUA: 384372
+
+TAREA 19: PROBLEMAS 2 Y 3
+
+PROBLEMA 2: Si se ordenan las filas y luego las columnas, el orden de las filas se preserva, pués un elemento cualquiera de una fila tiene a su izquierda valores menores o iguales a él y, a su derecha, valores mayores o iguales a él. Al ser ordenadas las columnas, éste élemento sólo puede ser cambiado por uno menor, de modo que se preserva que a su izquierda hayan <= y a su derecha >=.
+
+PROBLEMA 3: El número esperado de intercambios para:
+        
+            a) construir un montículo mediante n iserciones consectivas en un montículo vacío es n-1, pues se hace el intercambio de insercion.
+        
+            b) insertar un elemento nuevo en un montículo: log(n) intercambios, que es colocarlo en su lugar vertical.
+
+            c) extraer el mayor elemento de un montículo de n+1 elementos: (n+1)log(n+1) intercambios pues se realiza todo el ordenamiento. (n es por la insercion y log(n) por el fixdown.
+   

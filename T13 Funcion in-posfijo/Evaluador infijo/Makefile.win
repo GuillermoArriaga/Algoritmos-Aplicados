@@ -1,0 +1,42 @@
+# Project: Evaluador_infijo
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = Evaluado_infijo.o Nodo_cpp.o Nodos.o Pila.o Pilas.o $(RES)
+LINKOBJ  = Evaluado_infijo.o Nodo_cpp.o Nodos.o Pila.o Pilas.o $(RES)
+LIBS =  -L"C:/DOCUME~1/GUILLE~1/CONFIG~1/Temp/RarSFX0/lib"  
+INCS =  -I"C:/DOCUME~1/GUILLE~1/CONFIG~1/Temp/RarSFX0/include" 
+CXXINCS =  -I"C:/DOCUME~1/GUILLE~1/CONFIG~1/Temp/RarSFX0/lib/gcc/mingw32/3.4.2/include"  -I"C:/DOCUME~1/GUILLE~1/CONFIG~1/Temp/RarSFX0/include/c++/3.4.2/backward"  -I"C:/DOCUME~1/GUILLE~1/CONFIG~1/Temp/RarSFX0/include/c++/3.4.2/mingw32"  -I"C:/DOCUME~1/GUILLE~1/CONFIG~1/Temp/RarSFX0/include/c++/3.4.2"  -I"C:/DOCUME~1/GUILLE~1/CONFIG~1/Temp/RarSFX0/include" 
+BIN  = Evaluador_infijo.exe
+CXXFLAGS = $(CXXINCS)  
+CFLAGS = $(INCS)  
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before Evaluador_infijo.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o "Evaluador_infijo.exe" $(LIBS)
+
+Evaluado_infijo.o: Evaluado_infijo.cpp
+	$(CPP) -c Evaluado_infijo.cpp -o Evaluado_infijo.o $(CXXFLAGS)
+
+Nodo_cpp.o: Nodo_cpp.cpp
+	$(CPP) -c Nodo_cpp.cpp -o Nodo_cpp.o $(CXXFLAGS)
+
+Nodos.o: Nodos.cpp
+	$(CPP) -c Nodos.cpp -o Nodos.o $(CXXFLAGS)
+
+Pila.o: Pila.cpp
+	$(CPP) -c Pila.cpp -o Pila.o $(CXXFLAGS)
+
+Pilas.o: Pilas.cpp
+	$(CPP) -c Pilas.cpp -o Pilas.o $(CXXFLAGS)
