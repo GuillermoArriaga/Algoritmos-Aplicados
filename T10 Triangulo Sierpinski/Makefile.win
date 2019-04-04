@@ -1,0 +1,30 @@
+# Project: ShellDevC
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe -D__DEBUG__
+CC   = gcc.exe -D__DEBUG__
+WINDRES = windres.exe
+RES  = 
+OBJ  = GAG_Sierpinski.o $(RES)
+LINKOBJ  = GAG_Sierpinski.o $(RES)
+LIBS =  -L"C:/DOCUME~1/GUILLE~1/CONFIG~1/Temp/RarSFX0/lib" -mwindows  -g3 
+INCS =  -I"C:/DOCUME~1/GUILLE~1/CONFIG~1/Temp/RarSFX0/include" 
+CXXINCS =  -I"C:/DOCUME~1/GUILLE~1/CONFIG~1/Temp/RarSFX0/lib/gcc/mingw32/3.4.2/include"  -I"C:/DOCUME~1/GUILLE~1/CONFIG~1/Temp/RarSFX0/include/c++/3.4.2/backward"  -I"C:/DOCUME~1/GUILLE~1/CONFIG~1/Temp/RarSFX0/include/c++/3.4.2/mingw32"  -I"C:/DOCUME~1/GUILLE~1/CONFIG~1/Temp/RarSFX0/include/c++/3.4.2"  -I"C:/DOCUME~1/GUILLE~1/CONFIG~1/Temp/RarSFX0/include" 
+BIN  = ShellDevC.exe
+CXXFLAGS = $(CXXINCS)   -g3
+CFLAGS = $(INCS)   -g3
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before ShellDevC.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o "ShellDevC.exe" $(LIBS)
+
+GAG_Sierpinski.o: GAG_Sierpinski.cpp
+	$(CPP) -c GAG_Sierpinski.cpp -o GAG_Sierpinski.o $(CXXFLAGS)
