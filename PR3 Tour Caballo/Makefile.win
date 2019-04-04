@@ -1,0 +1,36 @@
+# Project: Tour_caballo
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = Nodoi.o Pila.o PR3_Tour_caballero.o $(RES)
+LINKOBJ  = Nodoi.o Pila.o PR3_Tour_caballero.o $(RES)
+LIBS =  -L"C:/DOCUME~1/GUILLE~1/CONFIG~1/Temp/RarSFX0/lib"  
+INCS =  -I"C:/DOCUME~1/GUILLE~1/CONFIG~1/Temp/RarSFX0/include" 
+CXXINCS =  -I"C:/DOCUME~1/GUILLE~1/CONFIG~1/Temp/RarSFX0/lib/gcc/mingw32/3.4.2/include"  -I"C:/DOCUME~1/GUILLE~1/CONFIG~1/Temp/RarSFX0/include/c++/3.4.2/backward"  -I"C:/DOCUME~1/GUILLE~1/CONFIG~1/Temp/RarSFX0/include/c++/3.4.2/mingw32"  -I"C:/DOCUME~1/GUILLE~1/CONFIG~1/Temp/RarSFX0/include/c++/3.4.2"  -I"C:/DOCUME~1/GUILLE~1/CONFIG~1/Temp/RarSFX0/include" 
+BIN  = Tour_caballo.exe
+CXXFLAGS = $(CXXINCS)  
+CFLAGS = $(INCS)  
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before Tour_caballo.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o "Tour_caballo.exe" $(LIBS)
+
+Nodoi.o: Nodoi.cpp
+	$(CPP) -c Nodoi.cpp -o Nodoi.o $(CXXFLAGS)
+
+Pila.o: Pila.cpp
+	$(CPP) -c Pila.cpp -o Pila.o $(CXXFLAGS)
+
+PR3_Tour_caballero.o: PR3_Tour_caballero.cpp
+	$(CPP) -c PR3_Tour_caballero.cpp -o PR3_Tour_caballero.o $(CXXFLAGS)

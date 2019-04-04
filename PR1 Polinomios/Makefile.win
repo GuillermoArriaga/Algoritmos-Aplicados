@@ -1,0 +1,36 @@
+# Project: PR1_Polinomios
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = PR1_Polinomios_main.o Polinomio.o Monomio.o $(RES)
+LINKOBJ  = PR1_Polinomios_main.o Polinomio.o Monomio.o $(RES)
+LIBS =  -L"C:/DOCUME~1/GUILLE~1/CONFIG~1/Temp/RarSFX0/lib"  
+INCS =  -I"C:/DOCUME~1/GUILLE~1/CONFIG~1/Temp/RarSFX0/include" 
+CXXINCS =  -I"C:/DOCUME~1/GUILLE~1/CONFIG~1/Temp/RarSFX0/lib/gcc/mingw32/3.4.2/include"  -I"C:/DOCUME~1/GUILLE~1/CONFIG~1/Temp/RarSFX0/include/c++/3.4.2/backward"  -I"C:/DOCUME~1/GUILLE~1/CONFIG~1/Temp/RarSFX0/include/c++/3.4.2/mingw32"  -I"C:/DOCUME~1/GUILLE~1/CONFIG~1/Temp/RarSFX0/include/c++/3.4.2"  -I"C:/DOCUME~1/GUILLE~1/CONFIG~1/Temp/RarSFX0/include" 
+BIN  = PR1_Polinomios.exe
+CXXFLAGS = $(CXXINCS)  
+CFLAGS = $(INCS)  
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before PR1_Polinomios.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o "PR1_Polinomios.exe" $(LIBS)
+
+PR1_Polinomios_main.o: PR1_Polinomios_main.cpp
+	$(CPP) -c PR1_Polinomios_main.cpp -o PR1_Polinomios_main.o $(CXXFLAGS)
+
+Polinomio.o: Polinomio.cpp
+	$(CPP) -c Polinomio.cpp -o Polinomio.o $(CXXFLAGS)
+
+Monomio.o: Monomio.cpp
+	$(CPP) -c Monomio.cpp -o Monomio.o $(CXXFLAGS)
