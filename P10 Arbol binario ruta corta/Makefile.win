@@ -1,0 +1,42 @@
+# Project: P10_Arbol_binario
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = Arbol_binario_main.o Arbol_bin.o Nodo_arbol_bin.o Nodod.o Pila.o $(RES)
+LINKOBJ  = Arbol_binario_main.o Arbol_bin.o Nodo_arbol_bin.o Nodod.o Pila.o $(RES)
+LIBS =  -L"C:/DOCUME~1/GUILLE~1/CONFIG~1/Temp/RarSFX0/lib"  
+INCS =  -I"C:/DOCUME~1/GUILLE~1/CONFIG~1/Temp/RarSFX0/include" 
+CXXINCS =  -I"C:/DOCUME~1/GUILLE~1/CONFIG~1/Temp/RarSFX0/lib/gcc/mingw32/3.4.2/include"  -I"C:/DOCUME~1/GUILLE~1/CONFIG~1/Temp/RarSFX0/include/c++/3.4.2/backward"  -I"C:/DOCUME~1/GUILLE~1/CONFIG~1/Temp/RarSFX0/include/c++/3.4.2/mingw32"  -I"C:/DOCUME~1/GUILLE~1/CONFIG~1/Temp/RarSFX0/include/c++/3.4.2"  -I"C:/DOCUME~1/GUILLE~1/CONFIG~1/Temp/RarSFX0/include" 
+BIN  = P9_Arbol_binario.exe
+CXXFLAGS = $(CXXINCS)  
+CFLAGS = $(INCS)  
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before P9_Arbol_binario.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o "P9_Arbol_binario.exe" $(LIBS)
+
+Arbol_binario_main.o: Arbol_binario_main.cpp
+	$(CPP) -c Arbol_binario_main.cpp -o Arbol_binario_main.o $(CXXFLAGS)
+
+Arbol_bin.o: Arbol_bin.cpp
+	$(CPP) -c Arbol_bin.cpp -o Arbol_bin.o $(CXXFLAGS)
+
+Nodo_arbol_bin.o: Nodo_arbol_bin.cpp
+	$(CPP) -c Nodo_arbol_bin.cpp -o Nodo_arbol_bin.o $(CXXFLAGS)
+
+Nodod.o: Nodod.cpp
+	$(CPP) -c Nodod.cpp -o Nodod.o $(CXXFLAGS)
+
+Pila.o: Pila.cpp
+	$(CPP) -c Pila.cpp -o Pila.o $(CXXFLAGS)
