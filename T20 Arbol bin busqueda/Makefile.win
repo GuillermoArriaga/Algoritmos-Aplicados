@@ -1,0 +1,45 @@
+# Project: T20_BST
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = Nodod.o Pila.o BST.o BST_main.o Cola.o Nodo_BST.o $(RES)
+LINKOBJ  = Nodod.o Pila.o BST.o BST_main.o Cola.o Nodo_BST.o $(RES)
+LIBS =  -L"C:/DOCUME~1/GUILLE~1/CONFIG~1/Temp/RarSFX0/lib"  
+INCS =  -I"C:/DOCUME~1/GUILLE~1/CONFIG~1/Temp/RarSFX0/include" 
+CXXINCS =  -I"C:/DOCUME~1/GUILLE~1/CONFIG~1/Temp/RarSFX0/lib/gcc/mingw32/3.4.2/include"  -I"C:/DOCUME~1/GUILLE~1/CONFIG~1/Temp/RarSFX0/include/c++/3.4.2/backward"  -I"C:/DOCUME~1/GUILLE~1/CONFIG~1/Temp/RarSFX0/include/c++/3.4.2/mingw32"  -I"C:/DOCUME~1/GUILLE~1/CONFIG~1/Temp/RarSFX0/include/c++/3.4.2"  -I"C:/DOCUME~1/GUILLE~1/CONFIG~1/Temp/RarSFX0/include" 
+BIN  = T20_BST.exe
+CXXFLAGS = $(CXXINCS)  
+CFLAGS = $(INCS)  
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before T20_BST.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o "T20_BST.exe" $(LIBS)
+
+Nodod.o: Nodod.cpp
+	$(CPP) -c Nodod.cpp -o Nodod.o $(CXXFLAGS)
+
+Pila.o: Pila.cpp
+	$(CPP) -c Pila.cpp -o Pila.o $(CXXFLAGS)
+
+BST.o: BST.cpp
+	$(CPP) -c BST.cpp -o BST.o $(CXXFLAGS)
+
+BST_main.o: BST_main.cpp
+	$(CPP) -c BST_main.cpp -o BST_main.o $(CXXFLAGS)
+
+Cola.o: Cola.cpp
+	$(CPP) -c Cola.cpp -o Cola.o $(CXXFLAGS)
+
+Nodo_BST.o: Nodo_BST.cpp
+	$(CPP) -c Nodo_BST.cpp -o Nodo_BST.o $(CXXFLAGS)
