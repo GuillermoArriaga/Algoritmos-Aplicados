@@ -1,0 +1,53 @@
+ C2(N) = 2^n-1  - N
+
+De acuerdo a la forma explicada en clase, especifica como cómo se guarda en binario los números 131 y -131 en un short int. 
+Fecha de entrega: Antes del 23 de Febrero del 2009
+
+0  1  2  3  4  5  6  7   8   9   10
+1  2  4  8  16 32 64 128 256 512 1024
+
+131 = 1*2^7 + 1*2^1 + 1*2^0 = 128 + 2 + 1 = 131 [10] = 10000011
+
+tomando el short de 2 bytes: 16 bits:
+
+BIT   | 16 | 15 | 14 | 13 | 12 | 11 | 10 | 9 | 8 | 7 | 6 | 5 | 4 | 3 | 2 | 1 |
+VALOR |  0 |  0 |  0 |  0 |  0 |  0 |  0 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 1 | 1 | = +10000011 = +131
+VALOR |  1 |  1 |  1 |  1 |  1 |  1 |  1 | 1 | 1 | 0 | 1 | 1 | 1 | 1 | 0 | 1 | = -10000011 = -131
+SUMA  |  0 |  0 |  0 |  0 |  0 |  0 |  0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | = -10000011 = -131
+
+Así que el +131 se representa como 0000000001000011 en short int de 16 bits.
+Así que el -131 se representa como 1111111110111101 en short int de 16 bits
+
+
+4) Resolver este problema implementado la clase Matriz. Checar con este ejemplo [resultado=12 (4,0)]
+
+
+
+
+
+
+Practica 4:
+
+Problema.- Leer una matriz de un archivo llamado "matriz.txt" con formato:
+primero dos enteros que representan el tamaño de la matriz(filasXcolumnas) y luego
+los elementos de la matriz, los elementos de la matriz son 1 o 0.
+
+Ejemplo de "matrix.txt":
+3 4
+1 0 0 0
+1 1 1 1
+0 0 0 1
+
+luego, calcular el tamaño del camino de 1's que empece en la coordenada (0,0). Imprimir el resultado 
+y la coordenada final del camino.
+
+NOTA: un "1" es adyacente a otro "1" si esta a su derecha,izquierda,arriba o abajo en la matriz.
+NOTA2: el camino de 1's no hay bifurcaciones ni ciclos.
+
+
+5 5
+1 1 1 1 1
+0 0 0 0 1
+1 1 1 1 1
+1 0 0 0 0
+0 1 1 1 1
